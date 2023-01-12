@@ -1,0 +1,23 @@
+.header {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.header__logo {
+    align-self: center;
+    max-width: 100%;
+}
+
+.header__participant {
+    position: relative;
+    top: 3em;
+    max-width: 100%;
+}
+
+@media(max-width: 700px) {
+    .header{
+        flex-direction: column;
+    }
+}

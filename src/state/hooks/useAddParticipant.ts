@@ -13,8 +13,13 @@ const useAddParticipant = () => {
     const setError = useSetRecoilState(errorMessage);
 
     return (participantName:string) => {
-        if(participantNames.includes(participantName)){
+        if(participantNames.includes(participantName)){            
             setError('Nomes duplicados não são permitidos');
+
+            setTimeout(()=>{
+                //clean errors after 5 seconds;
+                setError('');
+            }, 5000);
 
             return;
         }

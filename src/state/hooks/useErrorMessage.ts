@@ -1,6 +1,10 @@
-import { useRecoilState } from "recoil"
+import { useRecoilValue } from "recoil"
 import { errorMessage } from "../atom"
 
-const useErrorMessage = ()=> useRecoilState(errorMessage);
+const useErrorMessage = ()=> {
+    const message = useRecoilValue(errorMessage);
+
+    return message;
+};
 
 export default useErrorMessage;

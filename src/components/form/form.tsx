@@ -9,7 +9,7 @@ const Form = () => {
 
     const addParticipant = useAddParticipant();
 
-    const [errorMessage, setErrorMessage] = useErrorMessage();
+    const errorMessage = useErrorMessage();
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
 

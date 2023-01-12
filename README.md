@@ -1,7 +1,13 @@
-# Getting Started with Create React App
+# Sorteador de amigo secreto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App made with React
 
+React application where the focus was to build the application starting from the tests.
+
+
+
+
+> Um teste deveria falhar somente por um único motivo. - Vinicios Neves
 ## Available Scripts
 
 In the project directory, you can run:

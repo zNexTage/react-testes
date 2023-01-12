@@ -1,13 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import Form from './components/form/form';
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <BrowserRouter>
+      <RecoilRoot>
+          <Routes>
+            <Route path="/" element={<Form />} />
+          </Routes>
+      </RecoilRoot>
+    </BrowserRouter>
   );
 }
 

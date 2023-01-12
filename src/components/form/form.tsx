@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import useAddParticipant from "../../state/hooks/useAddParticipant";
+import useErrorMessage from "../../state/hooks/useErrorMessage";
 
 const Form = () => {
     const [name, setName] = useState<string>('');
@@ -7,6 +8,8 @@ const Form = () => {
     const participantInput = useRef<HTMLInputElement>(null);
 
     const addParticipant = useAddParticipant();
+
+    const [errorMessage, setErrorMessage] = useErrorMessage();
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
 
@@ -34,6 +37,7 @@ const Form = () => {
             >
                 Adicionar
             </button>
+            {errorMessage && <p role={'alert'}>{errorMessage}</p>}
         </form>
     )
 }

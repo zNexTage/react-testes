@@ -5,4 +5,13 @@ const participants = atom<string[]>({
     default: []
 });
 
-export default participants;
+const errorMessage = atom<string>({
+    key: 'errorMessage',
+    default: ''
+});
+
+export {
+    participants,
+    errorMessage
+};
+

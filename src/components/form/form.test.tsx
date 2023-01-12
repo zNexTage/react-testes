@@ -49,3 +49,36 @@ test('add a new participants when the participant name field is not blank', () =
     // Focus in input
     expect(input).toHaveFocus();
 });
+
+test('duplicate names cannot be added to the list', ()=>{
+    render(
+        <RecoilRoot>
+            <Form />
+        </RecoilRoot>
+    );
+
+    //Find in DOM the input
+    const input = screen.getByPlaceholderText('Insira os nomes dos participantes');
+
+    //Find the button
+    const button = screen.getByRole('button');
+
+    // Added Fernanda Takai to the list
+    // Input value
+    fireEvent.change(input, { target: { value: 'Fernanda Takai' } });
+
+    // Submit form
+    fireEvent.click(button);
+
+    // Try to add Fernanda Takai to the list again; must be fail, we don't want duplicata name.
+
+    // Input value
+    fireEvent.change(input, { target: { value: 'Fernanda Takai' } });
+    
+    // Submit form
+    fireEvent.click(button);
+
+    const errorMessage = screen.getByRole('alert');
+
+    expect(errorMessage.textContent).toBe('Nomes duplicados não são permitidos');
+});

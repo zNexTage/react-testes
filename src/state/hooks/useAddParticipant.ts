@@ -1,5 +1,5 @@
-import { useSetRecoilState } from "recoil";
-import participants from "../atom";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import {errorMessage, participants} from "../atom";
 
 /**
  * Hook to add a new participant to the `participants` state
@@ -8,7 +8,17 @@ import participants from "../atom";
 const useAddParticipant = () => {
     const setListParticipant = useSetRecoilState(participants);
 
+    const participantNames = useRecoilValue(participants);
+
+    const setError = useSetRecoilState(errorMessage);
+
     return (participantName:string) => {
+        if(participantNames.includes(participantName)){
+            setError('Nomes duplicados não são permitidos');
+
+            return;
+        }
+
         return setListParticipant(participants => [...participants, participantName]);
     }
 }

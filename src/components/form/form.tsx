@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import useAddParticipant from "../../state/hooks/useAddParticipant";
 import useErrorMessage from "../../state/hooks/useErrorMessage";
+import style from "./form.module.css";
 
 const Form = () => {
     const [name, setName] = useState<string>('');
@@ -13,7 +14,7 @@ const Form = () => {
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value);
 
-    const onSubmit = (event:React.FormEvent<HTMLFormElement>) =>{
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         setName('');
@@ -25,18 +26,31 @@ const Form = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <input
-                ref={participantInput}
-                value={name}
-                onChange={onChange}
-                type="text"
-                placeholder="Insira os nomes dos participantes" />
+            <fieldset className={style.form__fieldset}>
+                <legend className={style.form__legend}>
+                    <h1>
+                        Vamos começar?
+                    </h1>
+                </legend>
+                <div>
+                    <input
+                        ref={participantInput}
+                        value={name}
+                        className={style.form__input}
+                        onChange={onChange}
+                        type="text"
+                        placeholder="Insira os nomes dos participantes" />
 
-            <button
-                disabled={!name}
-            >
-                Adicionar
-            </button>
+                    <button
+                        className={style.form__button}
+                        disabled={!name}
+                    >
+                        Adicionar
+                    </button>
+                </div>
+            </fieldset>
+
+
             {errorMessage && <p role={'alert'}>{errorMessage}</p>}
         </form>
     )

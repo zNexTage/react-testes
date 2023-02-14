@@ -10,8 +10,14 @@ const errorMessage = atom<string>({
     default: ''
 });
 
+const shuffleResult = atom<Map<string, string>>({
+    key:'resultShuffle',
+    default: new Map()
+})
+
 export {
     participants,
-    errorMessage
+    errorMessage,
+    shuffleResult 
 };
 

@@ -2,25 +2,70 @@
 
 exports[`A configuration page Should be rendered 1`] = `
 <div>
-  <form>
-    <input
-      placeholder="Insira os nomes dos participantes"
-      type="text"
-      value=""
+  <header
+    class="header"
+  >
+    <picture
+      class="header__logo"
+    >
+      <source
+        media="(max-width: 790px)"
+        srcset="logo-pequeno.png"
+      />
+      <img
+        alt=""
+        class="header__logo"
+        src="logo.png"
+      />
+    </picture>
+    <img
+      alt=""
+      class="header__participant"
+      src="participante.png"
     />
-    <button
-      disabled=""
+  </header>
+  <main
+    class="bg-blue h-100"
+  >
+    <section
+      class="bg-beige h-100 configuration__main__section"
     >
-      Adicionar
-    </button>
-  </form>
-  <ul />
-  <footer>
-    <button
-      disabled=""
-    >
-      Iniciar brincadeira
-    </button>
-  </footer>
+      <form>
+        <fieldset
+          class="form__fieldset"
+        >
+          <legend
+            class="form__legend"
+          >
+            <h1>
+              Vamos começar?
+            </h1>
+          </legend>
+          <div>
+            <input
+              class="form__input"
+              placeholder="Insira os nomes dos participantes"
+              type="text"
+              value=""
+            />
+            <button
+              class="form__button"
+              disabled=""
+            >
+              Adicionar
+            </button>
+          </div>
+        </fieldset>
+      </form>
+      <ul />
+      <footer>
+        <button
+          disabled=""
+        >
+          Iniciar brincadeira
+        </button>
+      </footer>
+    </section>
+  </main>
 </div>
 `;

@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import Form from './components/form/form';
 import Configuration from './pages/configuration/configuration';
+import Raffle from './pages/raffle/raffle';
 
 function App() {
   return (
@@ -12,6 +11,7 @@ function App() {
       <RecoilRoot>
           <Routes>
             <Route path="/" element={<Configuration />} />
+            <Route path="/sorteio" element={<Raffle />} />
           </Routes>
       </RecoilRoot>
     </BrowserRouter>

@@ -20,6 +20,8 @@ code {
 :root {
   --blue: #4B69FD;
   --beige: #FFF9EB;
+  --orange: #FE652B;
+  --grey: #C4C4C4;
 }
 
 .bg-blue {
@@ -28,6 +30,19 @@ code {
 
 .bg-beige {
   background-color: var(--beige);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: #FFF;
 }
 
 .h-100 {

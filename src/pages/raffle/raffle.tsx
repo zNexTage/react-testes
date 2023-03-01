@@ -14,12 +14,14 @@ const Raffle = () => {
 
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        debugger
 
         if (result.has(participantTheTime)) {
             setSecretFriend(result.get(participantTheTime)!);
-        }
 
+            setTimeout(()=>{
+                setSecretFriend("");
+            }, 5000);
+        }
     }
 
     useLayoutEffect(()=>{
